@@ -1,97 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Liste au Père Noël – Owen & Cédric</title>
-<style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #0d1117;
-        color: #fff;
-    }
-    header {
-        background: linear-gradient(135deg, #1f6feb, #238636);
-        padding: 40px;
-        text-align: center;
-        font-size: 32px;
-        font-weight: bold;
-    }
-
-    nav {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        background: #161b22;
-        padding: 15px 0;
-    }
-    nav a {
-        color: #fff;
-        text-decoration: none;
-        padding: 10px 20px;
-        border-radius: 8px;
-        background: #21262d;
-        transition: 0.3s;
-    }
-    nav a:hover {
-        background: #30363d;
-    }
-
-    .page {
-        display: none;
-        padding: 30px;
-        max-width: 900px;
-        margin: auto;
-    }
-
-    .active {
-        display: block;
-    }
-
-    h2 {
-        margin-top: 0;
-        font-size: 28px;
-    }
-
-    .gift-item {
-        background: #161b22;
-        padding: 15px;
-        border-radius: 10px;
-        margin-bottom: 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    button {
-        padding: 8px 15px;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        background: #238636;
-        color: #fff;
-        font-weight: bold;
-        transition: 0.2s ease;
-    }
-
-    button:hover { background: #2ea043; }
-
-    .disabled-item {
-        opacity: 0.4;
-    }
-    .disabled-item button {
-        background: #555 !important;
-        cursor: not-allowed;
-    }
-
-    .dino-theme h2 { color: #40ff8c; }
-    .cyber-theme h2 { color: #58a6ff; }
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste au Père Noël – Owen & Cédric</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1543/1543999.png" />
 </head>
 <body>
-<header>
+<header class="banner">
     🎅 Liste au Père Noël – Owen & Cédric 🎁
 </header>
 
@@ -103,7 +20,7 @@
 
 <div id="home" class="page active">
     <h2>Bienvenue !</h2>
-    <p style="font-size:18px; line-height:1.6;">
+    <p>
         Voici notre liste de Noël 🎄<br><br>
         ⭐ Choisissez un cadeau pour Owen ou Cédric.<br>
         ⭐ Cliquez sur « Je prends » pour bloquer l’article.<br>
@@ -112,42 +29,46 @@
     </p>
 </div>
 
-<!-- PAGE OWEN -->
 <div id="owen" class="page dino-theme">
     <h2>🦖 Liste d'Owen</h2>
 
     <div class="gift-item" id="lego">
-        <span>🧱 Lego Jurassic Park – T-Rex</span>
+        <img src="https://m.media-amazon.com/images/I/81pW-PaQ5JL._AC_SL1500_.jpg" class="gift-img">
+        <span>Lego Jurassic Park – T-Rex</span>
         <button onclick="reserve('lego')">Je prends</button>
     </div>
 
     <div class="gift-item" id="spiderman">
-        <span>🕷️ Sweat Spiderman – 6 ans</span>
+        <img src="https://m.media-amazon.com/images/I/71pW9IiiaXL._AC_SL1500_.jpg" class="gift-img">
+        <span>Sweat Spiderman – 6 ans</span>
         <button onclick="reserve('spiderman')">Je prends</button>
     </div>
 
     <div class="gift-item" id="dino">
-        <span>🦖 Figurine Dino géante</span>
+        <img src="https://m.media-amazon.com/images/I/81yR5cYsJVL._AC_SL1500_.jpg" class="gift-img">
+        <span>Figurine Dino géante</span>
         <button onclick="reserve('dino')">Je prends</button>
     </div>
 </div>
 
-<!-- PAGE CEDRIC -->
 <div id="cedric" class="page cyber-theme">
     <h2>🔐 Liste de Cédric</h2>
 
     <div class="gift-item" id="casio">
-        <span>⌚ Montre Casio AE1200</span>
+        <img src="https://m.media-amazon.com/images/I/71Qy5tWQ1cL._AC_SL1500_.jpg" class="gift-img">
+        <span>Montre Casio AE1200</span>
         <button onclick="reserve('casio')">Je prends</button>
     </div>
 
     <div class="gift-item" id="dualsense">
-        <span>🎮 Manette PS5 – DualSense Edge</span>
+        <img src="https://m.media-amazon.com/images/I/61y5ZcZ1oLL._AC_SL1500_.jpg" class="gift-img">
+        <span>Manette PS5 – DualSense Edge</span>
         <button onclick="reserve('dualsense')">Je prends</button>
     </div>
 
     <div class="gift-item" id="techwear">
-        <span>🥷 Jogging Techwear noir</span>
+        <img src="https://m.media-amazon.com/images/I/61Y1rjqV0YL._AC_UL1500_.jpg" class="gift-img">
+        <span>Jogging Techwear noir</span>
         <button onclick="reserve('techwear')">Je prends</button>
     </div>
 </div>
@@ -164,23 +85,9 @@ function reserve(id) {
     const btn = item.querySelector('button');
     btn.textContent = "Indisponible";
     btn.disabled = true;
-}
-</script>
-
-<link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1543/1543999.png" />
-<script>
-function showPage(pageId) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById(pageId).classList.add('active');
-}
-function reserve(id) {
-    const item = document.getElementById(id);
-    item.classList.add('disabled-item');
-    const btn = item.querySelector('button');
-    btn.textContent = "Indisponible";
-    btn.disabled = true;
     localStorage.setItem(id, "taken");
 }
+
 document.addEventListener("DOMContentLoaded", function () {
     const items = document.querySelectorAll('.gift-item');
     items.forEach(item => {
@@ -194,5 +101,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
+
+<div class="snow"></div>
+
 </body>
 </html>
