@@ -59,6 +59,28 @@ nav a:hover { background: #30363d; }
     backdrop-filter: blur(6px);
 }
 
+.gift-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.gift-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.gift-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.gift-price {
+    font-size: 16px;
+    color: #ffd700;
+    margin-top: 4px;
+}
+
 .gift-img {
     width: 90px;
     height: 90px;
