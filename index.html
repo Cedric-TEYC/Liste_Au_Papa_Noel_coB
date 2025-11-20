@@ -167,5 +167,32 @@ function reserve(id) {
 }
 </script>
 
+<link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1543/1543999.png" />
+<script>
+function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+}
+function reserve(id) {
+    const item = document.getElementById(id);
+    item.classList.add('disabled-item');
+    const btn = item.querySelector('button');
+    btn.textContent = "Indisponible";
+    btn.disabled = true;
+    localStorage.setItem(id, "taken");
+}
+document.addEventListener("DOMContentLoaded", function () {
+    const items = document.querySelectorAll('.gift-item');
+    items.forEach(item => {
+        let id = item.id;
+        if (localStorage.getItem(id) === "taken") {
+            item.classList.add('disabled-item');
+            const btn = item.querySelector('button');
+            btn.textContent = "Indisponible";
+            btn.disabled = true;
+        }
+    });
+});
+</script>
 </body>
 </html>
