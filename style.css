@@ -1,3 +1,4 @@
+/* ==== FOND ==== */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -6,9 +7,9 @@ body {
     color: #fff;
 }
 
+/* ==== BANNIÈRE ==== */
 .banner {
-    background: url('https://cdn.pixabay.com/photo/2016/12/26/17/28/santa-claus-1939014_1280.jpg') no-repeat center center;
-    background-size: cover;
+    background: rgba(0,0,0,0.55);
     padding: 70px 20px;
     text-align: center;
     font-size: 36px;
@@ -17,6 +18,7 @@ body {
     text-shadow: 2px 2px 4px #000;
 }
 
+/* ==== NAV ==== */
 nav {
     display: flex;
     justify-content: center;
@@ -36,6 +38,7 @@ nav a:hover {
     background: #30363d;
 }
 
+/* ==== PAGES ==== */
 .page {
     display: none;
     padding: 30px;
@@ -46,15 +49,17 @@ nav a:hover {
     display: block;
 }
 
+/* ==== CARTES ==== */
 .gift-item {
-    background: #161b22;
+    background: rgba(22, 27, 34, 0.85);
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 0 5px #0005;
+    box-shadow: 0 0 10px #0008;
+    backdrop-filter: blur(6px);
 }
 
 .gift-img {
@@ -65,6 +70,7 @@ nav a:hover {
     margin-right: 15px;
 }
 
+/* ==== BOUTONS ==== */
 button {
     padding: 8px 15px;
     border: none;
@@ -77,6 +83,7 @@ button {
 }
 button:hover { background: #2ea043; }
 
+/* ==== ITEMS PRIS ==== */
 .disabled-item {
     opacity: 0.4;
 }
@@ -85,10 +92,11 @@ button:hover { background: #2ea043; }
     cursor: not-allowed;
 }
 
+/* ==== TITRES ==== */
 .dino-theme h2 { color: #40ff8c; }
 .cyber-theme h2 { color: #58a6ff; }
 
-/* ❄ Animation neige */
+/* ==== NEIGE ULTRA LIGHT ==== */
 .snow {
     pointer-events: none;
     position: fixed;
@@ -96,16 +104,15 @@ button:hover { background: #2ea043; }
     left: 0;
     width: 100%;
     height: 100%;
+    animation: snowfall 12s linear infinite;
     background-image:
         radial-gradient(white 1px, transparent 1px),
         radial-gradient(white 1px, transparent 1px);
-    background-size: 3px 3px, 2px 2px;
-    background-position: 0 0, 50px 50px;
-    animation: snowfall 12s linear infinite;
-    opacity: 0.35;
+    background-size: 4px 4px, 3px 3px;
+    opacity: 0.25;
 }
 
 @keyframes snowfall {
-    from { transform: translateY(-100px); }
-    to { transform: translateY(100vh); }
+    from { background-position: 0 0, 0 0; }
+    to { background-position: 0 1000px, 0 800px; }
 }
