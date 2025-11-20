@@ -14,12 +14,10 @@
 
 <body>
 
-<!-- BANNIÈRE -->
 <header class="banner">
     🎅 Liste au Père Noël – Owen & Cédric 🎁
 </header>
 
-<!-- NAVIGATION -->
 <nav>
     <a href="#" onclick="showPage('home')">🏠 Accueil</a>
     <a href="#" onclick="showPage('owen')">🦖 Liste d'Owen</a>
@@ -84,7 +82,6 @@
     </div>
 </div>
 
-<!-- SCRIPT DU SITE -->
 <script>
 function showPage(pageId) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -114,10 +111,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-<!-- FLOC0NS -->
+<!-- NEIGE -->
 <div class="snow"></div>
 
-<!-- SCRIPT DES FLOC0NS -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const snow = document.querySelector(".snow");
@@ -129,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         flake.style.left = Math.random() * 100 + "vw";
         flake.style.fontSize = (Math.random() * 20 + 10) + "px";
-        flake.style.animationDuration = (Math.random() * 8 + 5) + "s";
+        flake.style.animationDuration = (Math.random() * 8 + 6) + "s";
         flake.style.animationDelay = (Math.random() * 5) + "s";
 
         snow.appendChild(flake);
