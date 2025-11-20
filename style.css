@@ -45,11 +45,9 @@ nav a:hover {
     max-width: 900px;
     margin: auto;
 }
-.active {
-    display: block;
-}
+.active { display: block; }
 
-/* ==== CARTES ==== */
+/* ==== CARTES CADEAUX ==== */
 .gift-item {
     background: rgba(22, 27, 34, 0.85);
     padding: 15px;
@@ -59,7 +57,6 @@ nav a:hover {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 0 10px #0008;
-    backdrop-filter: blur(6px);
 }
 
 .gift-img {
@@ -79,52 +76,40 @@ button {
     background: #238636;
     color: #fff;
     font-weight: bold;
-    transition: 0.2s ease;
 }
 button:hover { background: #2ea043; }
 
-/* ==== ITEMS PRIS ==== */
-.disabled-item {
-    opacity: 0.4;
-}
+.disabled-item { opacity: 0.4; }
 .disabled-item button {
     background: #555 !important;
     cursor: not-allowed;
 }
 
-/* ==== TITRES ==== */
+/* ==== THEMES ==== */
 .dino-theme h2 { color: #40ff8c; }
 .cyber-theme h2 { color: #58a6ff; }
 
-/* ==== FLOC0NS RÉALISTES ==== */
+/* ==== FLOC0NS ==== */
 .snow {
-    pointer-events: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    pointer-events: none;
 }
 
 .flake {
     position: absolute;
     top: -10px;
     color: white;
-    font-size: 12px;
-    opacity: 0.8;
+    font-size: 20px;
+    opacity: 0.9;
     animation: fall linear infinite;
-    text-shadow: 0 0 5px rgba(255,255,255,0.8);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 }
 
 @keyframes fall {
-    0% {
-        transform: translateY(-10px) rotate(0deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0;
-    }
+    0% { transform: translateY(-10px) rotate(0deg); }
+    100% { transform: translateY(110vh) rotate(360deg); }
 }
-
