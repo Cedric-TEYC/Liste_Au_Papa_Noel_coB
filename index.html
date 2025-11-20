@@ -4,20 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste au Père Noël – Owen & Cédric</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1543/1543999.png" />
+
+    <!-- Favicon Père Noël -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2973/2973155.png">
 </head>
+
 <body>
+
+<!-- BANNIÈRE -->
 <header class="banner">
     🎅 Liste au Père Noël – Owen & Cédric 🎁
 </header>
 
+<!-- NAVIGATION -->
 <nav>
     <a href="#" onclick="showPage('home')">🏠 Accueil</a>
     <a href="#" onclick="showPage('owen')">🦖 Liste d'Owen</a>
     <a href="#" onclick="showPage('cedric')">🔐 Liste de Cédric</a>
 </nav>
 
+<!-- PAGE ACCUEIL -->
 <div id="home" class="page active">
     <h2>Bienvenue !</h2>
     <p>
@@ -29,50 +38,53 @@
     </p>
 </div>
 
+<!-- PAGE OWEN -->
 <div id="owen" class="page dino-theme">
     <h2>🦖 Liste d'Owen</h2>
 
     <div class="gift-item" id="lego">
-        <img src="https://m.media-amazon.com/images/I/81pW-PaQ5JL._AC_SL1500_.jpg" class="gift-img">
+        <img src="Nous_deux.jpeg" class="gift-img">
         <span>Lego Jurassic Park – T-Rex</span>
         <button onclick="reserve('lego')">Je prends</button>
     </div>
 
     <div class="gift-item" id="spiderman">
-        <img src="https://m.media-amazon.com/images/I/71pW9IiiaXL._AC_SL1500_.jpg" class="gift-img">
+        <img src="Nous_deux.jpeg" class="gift-img">
         <span>Sweat Spiderman – 6 ans</span>
         <button onclick="reserve('spiderman')">Je prends</button>
     </div>
 
     <div class="gift-item" id="dino">
-        <img src="https://m.media-amazon.com/images/I/81yR5cYsJVL._AC_SL1500_.jpg" class="gift-img">
+        <img src="Nous_deux.jpeg" class="gift-img">
         <span>Figurine Dino géante</span>
         <button onclick="reserve('dino')">Je prends</button>
     </div>
 </div>
 
+<!-- PAGE CÉDRIC -->
 <div id="cedric" class="page cyber-theme">
     <h2>🔐 Liste de Cédric</h2>
 
     <div class="gift-item" id="casio">
-        <img src="https://m.media-amazon.com/images/I/71Qy5tWQ1cL._AC_SL1500_.jpg" class="gift-img">
+        <img src="Nous_deux.jpeg" class="gift-img">
         <span>Montre Casio AE1200</span>
         <button onclick="reserve('casio')">Je prends</button>
     </div>
 
     <div class="gift-item" id="dualsense">
-        <img src="https://m.media-amazon.com/images/I/61y5ZcZ1oLL._AC_SL1500_.jpg" class="gift-img">
+        <img src="Nous_deux.jpeg" class="gift-img">
         <span>Manette PS5 – DualSense Edge</span>
         <button onclick="reserve('dualsense')">Je prends</button>
     </div>
 
     <div class="gift-item" id="techwear">
-        <img src="https://m.media-amazon.com/images/I/61Y1rjqV0YL._AC_UL1500_.jpg" class="gift-img">
+        <img src="Nous_deux.jpeg" class="gift-img">
         <span>Jogging Techwear noir</span>
         <button onclick="reserve('techwear')">Je prends</button>
     </div>
 </div>
 
+<!-- SCRIPT -->
 <script>
 function showPage(pageId) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -102,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<!-- Neige ultra light -->
 <div class="snow"></div>
 
 </body>
