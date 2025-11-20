@@ -96,23 +96,34 @@ button:hover { background: #2ea043; }
 .dino-theme h2 { color: #40ff8c; }
 .cyber-theme h2 { color: #58a6ff; }
 
-/* ==== NEIGE ULTRA LIGHT ==== */
 .snow {
     pointer-events: none;
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+}
+
+.snow::before,
+.snow::after {
+    content: "";
+    position: absolute;
+    top: -100%;
     width: 100%;
-    height: 100%;
-    animation: snowfall 12s linear infinite;
-    background-image:
-        radial-gradient(white 1px, transparent 1px),
-        radial-gradient(white 1px, transparent 1px);
-    background-size: 4px 4px, 3px 3px;
-    opacity: 0.25;
+    height: 200%;
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 2px 2px;
+    opacity: 0.15;
+    animation: snowfall 20s linear infinite;
+}
+
+.snow::after {
+    background-size: 3px 3px;
+    opacity: 0.10;
+    animation-duration: 30s;
 }
 
 @keyframes snowfall {
-    from { background-position: 0 0, 0 0; }
-    to { background-position: 0 1000px, 0 800px; }
+    from { transform: translateY(0); }
+    to { transform: translateY(100%); }
 }
