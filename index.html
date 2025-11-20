@@ -9,36 +9,8 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Favicon Père Noël -->
-    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2973/2973155.png">
+    <link rel="icon" type="image/png" href="https://img.icons8.com/?size=100&id=ojNPx5wUA49-&format=png&color=000000">
 </head>
-    
-<script>
-// Génération de flocons dynamiques
-document.addEventListener("DOMContentLoaded", () => {
-    const snowContainer = document.querySelector(".snow");
-
-    for (let i = 0; i < 40; i++) { // Nombre de flocons
-        const flake = document.createElement("div");
-        flake.classList.add("flake");
-        flake.textContent = "❄"; // flocon emoji
-        
-        // Position horizontale aléatoire
-        flake.style.left = Math.random() * 100 + "vw";
-        
-        // Taille aléatoire
-        const size = Math.random() * 20 + 10;
-        flake.style.fontSize = size + "px";
-
-        // Durée de chute aléatoire
-        flake.style.animationDuration = (Math.random() * 10 + 10) + "s";
-
-        // Petit délai pour échelonner les chutes
-        flake.style.animationDelay = Math.random() * 10 + "s";
-
-        snowContainer.appendChild(flake);
-    }
-});
-</script>
 
 <body>
 
@@ -112,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 </div>
 
-<!-- SCRIPT -->
+<!-- SCRIPT DU SITE -->
 <script>
 function showPage(pageId) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -142,8 +114,28 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-<!-- Neige ultra light -->
+<!-- FLOC0NS -->
 <div class="snow"></div>
+
+<!-- SCRIPT DES FLOC0NS -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const snow = document.querySelector(".snow");
+
+    for (let i = 0; i < 40; i++) {
+        const flake = document.createElement("div");
+        flake.classList.add("flake");
+        flake.textContent = "❄";
+
+        flake.style.left = Math.random() * 100 + "vw";
+        flake.style.fontSize = (Math.random() * 20 + 10) + "px";
+        flake.style.animationDuration = (Math.random() * 8 + 5) + "s";
+        flake.style.animationDelay = (Math.random() * 5) + "s";
+
+        snow.appendChild(flake);
+    }
+});
+</script>
 
 </body>
 </html>
