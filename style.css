@@ -96,34 +96,35 @@ button:hover { background: #2ea043; }
 .dino-theme h2 { color: #40ff8c; }
 .cyber-theme h2 { color: #58a6ff; }
 
+/* ==== FLOC0NS RÉALISTES ==== */
 .snow {
     pointer-events: none;
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
-.snow::before,
-.snow::after {
-    content: "";
+.flake {
     position: absolute;
-    top: -100%;
-    width: 100%;
-    height: 200%;
-    background-image: radial-gradient(white 1px, transparent 1px);
-    background-size: 2px 2px;
-    opacity: 0.15;
-    animation: snowfall 20s linear infinite;
+    top: -10px;
+    color: white;
+    font-size: 12px;
+    opacity: 0.8;
+    animation: fall linear infinite;
+    text-shadow: 0 0 5px rgba(255,255,255,0.8);
 }
 
-.snow::after {
-    background-size: 3px 3px;
-    opacity: 0.10;
-    animation-duration: 30s;
+@keyframes fall {
+    0% {
+        transform: translateY(-10px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
 }
 
-@keyframes snowfall {
-    from { transform: translateY(0); }
-    to { transform: translateY(100%); }
-}
