@@ -7,9 +7,8 @@ body {
 }
 
 .banner {
-    background: url('https://images.unsplash.com/photo-1544794759-432d6e6e7d43?auto=format&fit=crop&w=1350&q=80');
+    background: url('https://cdn.pixabay.com/photo/2016/12/26/17/28/santa-claus-1939014_1280.jpg') no-repeat center center;
     background-size: cover;
-    background-position: center;
     padding: 70px 20px;
     text-align: center;
     font-size: 36px;
