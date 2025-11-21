@@ -1,18 +1,23 @@
-/* ===== FOND ===== */
+/********************************************
+  🌌 FOND
+*********************************************/
 .background {
     position: fixed;
-    top: 0; 
-    left: 0;
+    top: 0; left: 0;
     width: 100%;
     height: 100%;
-    background: url("Nous_deux.jpeg") center top no-repeat fixed;
-    background-size: contain;  /* EXACT rendu ancien */
+    background-image: url('Nous_deux.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top center;
     background-color: #000;
-    filter: brightness(0.40);
+    filter: brightness(0.45);
     z-index: -2;
 }
 
-/* ===== NEIGE ===== */
+/********************************************
+  ❄ NEIGE
+*********************************************/
 .snow {
     position: fixed;
     top: 0; left: 0;
@@ -20,104 +25,95 @@
     pointer-events: none;
     z-index: -1;
 }
+
 .flake {
     position: absolute;
     top: -10px;
-    color: white;
-    opacity: 0.9;
-    font-size: 20px;
     animation: fall linear infinite;
-}
-@keyframes fall {
-    from { transform: translateY(-10px); }
-    to   { transform: translateY(110vh); }
+    opacity: 0.9;
+    color: #fff;
 }
 
-/* ===== TITRE ===== */
+@keyframes fall {
+    0%   { transform: translateY(-10px); }
+    100% { transform: translateY(110vh); }
+}
+
+/********************************************
+  🎅 BANNIÈRE
+*********************************************/
 .banner {
     background: rgba(0,0,0,0.55);
     padding: 55px 20px;
     text-align: center;
     font-size: 34px;
     font-weight: bold;
-    color: white;
-    text-shadow: 2px 2px 4px #000;
+    color: #fff;
+    text-shadow: 2px 2px 4px black;
 }
 
-/* ===== NAVIGATION ===== */
+/********************************************
+  🔗 NAVIGATION
+*********************************************/
 nav {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
     background: #161b22;
-    padding: 15px 0;
+    padding: 12px 0;
 }
-nav button {
-    color: #fff;
+
+nav a {
     background: #21262d;
-    padding: 10px 20px;
+    padding: 10px 25px;
     border-radius: 8px;
+    color: white;
+    text-decoration: none;
     font-size: 18px;
-    border: none;
-    cursor: pointer;
     transition: 0.3s;
 }
-nav button:hover { background: #30363d; }
 
-/* ===== STRUCTURE PAGES ===== */
+nav a:hover {
+    background: #30363d;
+}
+
+/********************************************
+  📄 PAGES
+*********************************************/
 .page {
     display: none;
     max-width: 900px;
     margin: 40px auto;
     padding: 20px;
-    color: white;
-}
-.active { display: block; }
-
-/* ===== CAISSE ACCUEIL ===== */
-.home-card {
-    background: rgba(0,0,0,0.55);
-    padding: 35px;
-    border-radius: 12px;
+    color: #fff !important;
     text-align: center;
-    color: white;
 }
 
-/* ===== LISTE CADEAUX ===== */
+.page.active { display: block; }
+
+.page * {
+    color: white !important;
+    text-shadow: 1px 1px 2px black;
+}
+
+/********************************************
+  🎁 CADEAUX
+*********************************************/
 .gift-item {
-    background: rgba(22,27,34,0.90);
+    background: rgba(22,27,34,0.9);
     padding: 15px;
     border-radius: 10px;
-    margin-bottom: 20px;
     display: flex;
     gap: 15px;
-    box-shadow: 0 0 12px #0007;
     align-items: center;
-    backdrop-filter: blur(4px);
+    margin-bottom: 20px;
 }
 
 .gift-img {
     width: 130px;
     height: 130px;
-    border-radius: 10px;
     object-fit: cover;
-}
-
-.gift-text {
-    display: flex;
-    flex-direction: column;
-    color: white;
-}
-
-.gift-name {
-    font-size: 19px;
-    font-weight: bold;
-    color: white;
-}
-
-.gift-price {
-    font-size: 16px;
-    color: #ffd700;
+    border-radius: 10px;
 }
 
 button {
@@ -130,53 +126,43 @@ button {
     font-weight: bold;
     cursor: pointer;
 }
-button:hover { background: #2ea043; }
+
+button:hover {
+    background: #2ea043;
+}
 
 .disabled-item { opacity: 0.35; }
 .disabled-item button {
     background: #555 !important;
-    cursor: not-allowed;
 }
 
-/* ===== RESPONSIVE ===== */
+/********************************************
+  📱 MOBILE
+*********************************************/
 @media (max-width: 600px) {
-
-    .banner {
-        font-size: 26px;
-        padding: 35px 10px;
-    }
 
     nav {
         flex-direction: column;
         gap: 10px;
     }
 
-    nav button {
+    nav a {
         width: 90%;
-        margin: 0 auto;
-        font-size: 17px;
-    }
-
-    .page {
-        max-width: 95%;
-        margin-top: 20px;
+        text-align: center;
+        margin: auto;
     }
 
     .gift-item {
         flex-direction: column;
-        text-align: center;
     }
 
     .gift-img {
-        width: 75%;
+        width: 80%;
         height: auto;
-        object-fit: contain;
     }
 
     button {
         width: 100%;
         margin-left: 0;
-        padding: 14px;
-        font-size: 17px;
     }
 }
