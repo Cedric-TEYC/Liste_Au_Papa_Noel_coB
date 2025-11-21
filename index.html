@@ -1,3 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste au Père Noël – Owen & Cédric</title>
+
+    <link rel="stylesheet" href="style.css?v=12">
+
+    <link rel="icon" type="image/png"
+          href="https://img.icons8.com/?size=100&id=ojNPx5wUA49-&format=png&color=000000">
+</head>
+
+<body>
+
+<!-- 🌌 FOND -->
+<div class="background"></div>
+
+<!-- ❄ NEIGE -->
+<div class="snow"></div>
+
+<!-- 🎅 BANNIÈRE -->
+<header class="banner">
+    🎅 Liste au Père Noël – Owen & Cédric 🎁
+</header>
+
+<!-- 🔗 NAV -->
+<nav>
+    <a onclick="showPage('home')">🏠 Accueil</a>
+    <a onclick="showPage('owen')">🦖 Liste d'Owen</a>
+    <a onclick="showPage('cedric')">🔐 Liste de Cédric</a>
+</nav>
+
 <main>
 
     <!-- 🏠 ACCUEIL -->
@@ -25,13 +58,11 @@
 
                 <div class="gift-links">
 
-                    <!-- AMAZON -->
                     <div class="gift-link-box">
                         <a href="#" target="_blank" class="gift-btn amazon">🛒 Acheter sur Amazon</a>
                         <span class="gift-price-btn">0€</span>
                     </div>
 
-                    <!-- SMYTHS -->
                     <div class="gift-link-box">
                         <a href="#" target="_blank" class="gift-btn smyths">🧸 Acheter chez Smyths</a>
                         <span class="gift-price-btn">49,99€</span>
@@ -94,6 +125,7 @@
         </div>
 
     </section>
+
 
     <!-- 🔐 CEDRIC -->
     <section id="cedric" class="page">
@@ -177,3 +209,10 @@
     </section>
 
 </main>
+
+<!-- 🔥 SCRIPTS -->
+<script type="module" src="firebase.js?v=12"></script>
+<script type="module" src="script.js?v=12"></script>
+
+</body>
+</html>
