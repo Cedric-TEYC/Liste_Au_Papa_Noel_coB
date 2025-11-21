@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste au Père Noël – Owen & Cédric</title>
 
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
 
     <link rel="icon" type="image/png"
           href="https://img.icons8.com/?size=100&id=ojNPx5wUA49-&format=png&color=000000">
@@ -13,95 +13,101 @@
 
 <body>
 
-<div class="background"></div>  <!-- 🔥 FOND FIXÉ -->
+<!-- 🌌 FOND + NEIGE -->
+<div class="background"></div>
+<div class="snow"></div>
 
-<div class="snow"></div>         <!-- ❄ NEIGE -->
-
+<!-- 🧭 BANNIÈRE -->
 <header class="banner">
     🎅 Liste au Père Noël – Owen & Cédric 🎁
 </header>
 
-<nav>
-    <a onclick="showPage('home')">🏠 Accueil</a>
-    <a onclick="showPage('owen')">🦖 Liste d'Owen</a>
-    <a onclick="showPage('cedric')">🔐 Liste de Cédric</a>
+<!-- 🔗 NAVIGATION -->
+<nav role="navigation">
+    <button onclick="showPage('home')" aria-label="Accueil">🏠 Accueil</button>
+    <button onclick="showPage('owen')" aria-label="Liste d'Owen">🦖 Liste d'Owen</button>
+    <button onclick="showPage('cedric')" aria-label="Liste de Cédric">🔐 Liste de Cédric</button>
 </nav>
 
-<!-- ACCUEIL -->
-<div id="home" class="page active">
-    <div class="home-card">
-        <h2>Bienvenue !</h2>
-        <p>
-            Voici notre liste de Noël 🎄<br><br>
-            ⭐ Choisissez un cadeau.<br>
-            ⭐ Cliquez sur « Je prends » pour bloquer l’article.<br>
-            ⭐ La réservation est synchronisée pour tout le monde.<br><br>
-            Merci Père Noël ! 🎅
-        </p>
-    </div>
-</div>
+<main>
 
-<!-- LISTE OWEN -->
-<div id="owen" class="page">
-    <h2>🦖 Liste d'Owen</h2>
-
-    <div class="gift-item" id="lego">
-        <img src="Nous_deux.jpeg" class="gift-img">
-        <div class="gift-text">
-            <span class="gift-name">Lego Jurassic Park – T-Rex</span>
+    <!-- 🏠 PAGE ACCUEIL -->
+    <section id="home" class="page active">
+        <div class="home-card">
+            <h2>Bienvenue !</h2>
+            <p>
+                Voici notre liste de Noël 🎄<br><br>
+                ⭐ Choisissez un cadeau.<br>
+                ⭐ Cliquez sur « Je prends » pour bloquer l’article.<br>
+                ⭐ La réservation est synchronisée pour tout le monde.<br><br>
+                Merci Père Noël ! 🎅
+            </p>
         </div>
-        <button onclick="reserve('lego')">Je prends</button>
-    </div>
+    </section>
 
-    <div class="gift-item" id="spiderman">
-        <img src="Nous_deux.jpeg" class="gift-img">
-        <div class="gift-text">
-            <span class="gift-name">Sweat Spiderman – 6 ans</span>
+    <!-- 🦖 PAGE OWEN -->
+    <section id="owen" class="page">
+        <h2>🦖 Liste d'Owen</h2>
+
+        <div class="gift-item" id="lego">
+            <img src="Nous_deux.jpeg" class="gift-img" alt="Lego Jurassic Park – T-Rex">
+            <div class="gift-text">
+                <span class="gift-name">Lego Jurassic Park – T-Rex</span>
+            </div>
+            <button onclick="reserve('lego')">Je prends</button>
         </div>
-        <button onclick="reserve('spiderman')">Je prends</button>
-    </div>
 
-    <div class="gift-item" id="dino">
-        <img src="Nous_deux.jpeg" class="gift-img">
-        <div class="gift-text">
-            <span class="gift-name">Figurine Dino géante</span>
+        <div class="gift-item" id="spiderman">
+            <img src="Nous_deux.jpeg" class="gift-img" alt="Sweat Spiderman – 6 ans">
+            <div class="gift-text">
+                <span class="gift-name">Sweat Spiderman – 6 ans</span>
+            </div>
+            <button onclick="reserve('spiderman')">Je prends</button>
         </div>
-        <button onclick="reserve('dino')">Je prends</button>
-    </div>
-</div>
 
-<!-- LISTE CEDRIC -->
-<div id="cedric" class="page">
-    <h2>🔐 Liste de Cédric</h2>
-
-    <div class="gift-item" id="hackypi">
-        <img src="Hackypi.jpg" class="gift-img">
-        <div class="gift-text">
-            <span class="gift-name">Hacky Pi – Kit sécurité programmable</span>
-            <span class="gift-price">39,34 € + 8,99 €</span>
+        <div class="gift-item" id="dino">
+            <img src="Nous_deux.jpeg" class="gift-img" alt="Figurine Dino géante">
+            <div class="gift-text">
+                <span class="gift-name">Figurine Dino géante</span>
+            </div>
+            <button onclick="reserve('dino')">Je prends</button>
         </div>
-        <button onclick="reserve('hackypi')">Je prends</button>
-    </div>
+    </section>
 
-    <div class="gift-item" id="dualsense">
-        <img src="Nous_deux.jpeg" class="gift-img">
-        <div class="gift-text">
-            <span class="gift-name">Manette PS5 – DualSense Edge</span>
+    <!-- 🔐 PAGE CÉDRIC -->
+    <section id="cedric" class="page">
+        <h2>🔐 Liste de Cédric</h2>
+
+        <div class="gift-item" id="hackypi">
+            <img src="Hackypi.jpg" class="gift-img" alt="Hacky Pi">
+            <div class="gift-text">
+                <span class="gift-name">Hacky Pi – Kit sécurité programmable</span>
+                <span class="gift-price">39,34 € + 8,99 €</span>
+            </div>
+            <button onclick="reserve('hackypi')">Je prends</button>
         </div>
-        <button onclick="reserve('dualsense')">Je prends</button>
-    </div>
 
-    <div class="gift-item" id="techwear">
-        <img src="Nous_deux.jpeg" class="gift-img">
-        <div class="gift-text">
-            <span class="gift-name">Jogging Techwear noir</span>
+        <div class="gift-item" id="dualsense">
+            <img src="Nous_deux.jpeg" class="gift-img" alt="Manette PS5 – DualSense Edge">
+            <div class="gift-text">
+                <span class="gift-name">Manette PS5 – DualSense Edge</span>
+            </div>
+            <button onclick="reserve('dualsense')">Je prends</button>
         </div>
-        <button onclick="reserve('techwear')">Je prends</button>
-    </div>
-</div>
 
-<script type="module" src="firebase.js?v=3"></script>
-<script type="module" src="script.js?v=3"></script>
+        <div class="gift-item" id="techwear">
+            <img src="Nous_deux.jpeg" class="gift-img" alt="Jogging Techwear noir">
+            <div class="gift-text">
+                <span class="gift-name">Jogging Techwear noir</span>
+            </div>
+            <button onclick="reserve('techwear')">Je prends</button>
+        </div>
+    </section>
+</main>
+
+<!-- 🔥 SCRIPTS -->
+<script type="module" src="firebase.js?v=4"></script>
+<script type="module" src="script.js?v=4"></script>
 
 </body>
 </html>
