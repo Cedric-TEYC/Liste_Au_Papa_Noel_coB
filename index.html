@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste au Père Noël – Owen & Cédric</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3">
 
     <link rel="icon" type="image/png"
           href="https://img.icons8.com/?size=100&id=ojNPx5wUA49-&format=png&color=000000">
@@ -13,36 +13,42 @@
 
 <body>
 
+<div class="background"></div>  <!-- 🔥 FOND FIXÉ -->
+
+<div class="snow"></div>         <!-- ❄ NEIGE -->
+
 <header class="banner">
     🎅 Liste au Père Noël – Owen & Cédric 🎁
 </header>
 
 <nav>
-    <a href="#" onclick="showPage('home')">🏠 Accueil</a>
-    <a href="#" onclick="showPage('owen')">🦖 Liste d'Owen</a>
-    <a href="#" onclick="showPage('cedric')">🔐 Liste de Cédric</a>
+    <a onclick="showPage('home')">🏠 Accueil</a>
+    <a onclick="showPage('owen')">🦖 Liste d'Owen</a>
+    <a onclick="showPage('cedric')">🔐 Liste de Cédric</a>
 </nav>
 
+<!-- ACCUEIL -->
 <div id="home" class="page active">
-    <h2>Bienvenue !</h2>
-    <p>
-        Voici notre liste de Noël 🎄<br><br>
-        ⭐ Choisissez un cadeau.<br>
-        ⭐ Cliquez sur « Je prends » pour bloquer l’article.<br>
-        ⭐ La réservation est synchronisée pour tout le monde.<br><br>
-        Merci Père Noël ! 🎅
-    </p>
+    <div class="home-card">
+        <h2>Bienvenue !</h2>
+        <p>
+            Voici notre liste de Noël 🎄<br><br>
+            ⭐ Choisissez un cadeau.<br>
+            ⭐ Cliquez sur « Je prends » pour bloquer l’article.<br>
+            ⭐ La réservation est synchronisée pour tout le monde.<br><br>
+            Merci Père Noël ! 🎅
+        </p>
+    </div>
 </div>
 
-<!-- ****** LISTE OWEN ****** -->
-<div id="owen" class="page dino-theme">
+<!-- LISTE OWEN -->
+<div id="owen" class="page">
     <h2>🦖 Liste d'Owen</h2>
 
     <div class="gift-item" id="lego">
         <img src="Nous_deux.jpeg" class="gift-img">
         <div class="gift-text">
             <span class="gift-name">Lego Jurassic Park – T-Rex</span>
-            <span class="gift-price"></span>
         </div>
         <button onclick="reserve('lego')">Je prends</button>
     </div>
@@ -51,7 +57,6 @@
         <img src="Nous_deux.jpeg" class="gift-img">
         <div class="gift-text">
             <span class="gift-name">Sweat Spiderman – 6 ans</span>
-            <span class="gift-price"></span>
         </div>
         <button onclick="reserve('spiderman')">Je prends</button>
     </div>
@@ -60,14 +65,13 @@
         <img src="Nous_deux.jpeg" class="gift-img">
         <div class="gift-text">
             <span class="gift-name">Figurine Dino géante</span>
-            <span class="gift-price"></span>
         </div>
         <button onclick="reserve('dino')">Je prends</button>
     </div>
 </div>
 
-<!-- ****** LISTE CEDRIC ****** -->
-<div id="cedric" class="page cyber-theme">
+<!-- LISTE CEDRIC -->
+<div id="cedric" class="page">
     <h2>🔐 Liste de Cédric</h2>
 
     <div class="gift-item" id="hackypi">
@@ -83,7 +87,6 @@
         <img src="Nous_deux.jpeg" class="gift-img">
         <div class="gift-text">
             <span class="gift-name">Manette PS5 – DualSense Edge</span>
-            <span class="gift-price"></span>
         </div>
         <button onclick="reserve('dualsense')">Je prends</button>
     </div>
@@ -92,16 +95,13 @@
         <img src="Nous_deux.jpeg" class="gift-img">
         <div class="gift-text">
             <span class="gift-name">Jogging Techwear noir</span>
-            <span class="gift-price"></span>
         </div>
         <button onclick="reserve('techwear')">Je prends</button>
     </div>
 </div>
 
-<div class="snow"></div>
-
-<script type="module" src="firebase.js"></script>
-<script type="module" src="script.js"></script>
+<script type="module" src="firebase.js?v=3"></script>
+<script type="module" src="script.js?v=3"></script>
 
 </body>
 </html>
