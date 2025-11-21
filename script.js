@@ -1,6 +1,6 @@
 /* ============================
    ❄ GÉNÉRATION DE LA NEIGE ❄
-   ============================ */
+============================ */
 
 const snowContainer = document.querySelector('.snow');
 
@@ -22,8 +22,8 @@ if (snowContainer) {
 }
 
 /* ============================
-   🔥 TON CODE FIREBASE (inchangé)
-   ============================ */
+   🔥 FIREBASE LOGIC
+============================ */
 
 import { db } from "./firebase.js";
 import { ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
@@ -53,7 +53,7 @@ onValue(ref(db, "reservations"), snapshot => {
     });
 });
 
-// 🔥 Réserver
+// 🔥 Réserver un article
 window.reserve = function(id){
     set(ref(db, "reservations/" + id), true);
 };
