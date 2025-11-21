@@ -1,39 +1,32 @@
-function showPage(pageId) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById(pageId).classList.add('active');
-}
+import { db } from "./firebase.js";
+import { ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
-// Marquer un cadeau réservé
-function reserve(id) {
-    db.ref("gifts/" + id).set("taken");
-}
+window.showPage = function(id){
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+};
 
-function updateGiftState(id, state) {
-    const item = document.getElementById(id);
-    if (!item) return;
+// 🔥 Mise à jour en temps réel
+onValue(ref(db, "reservations"), snapshot => {
+    const data = snapshot.val() || {};
 
-    const btn = item.querySelector("button");
-
-    if (state === "taken") {
-        item.classList.add("disabled-item");
-        btn.textContent = "Indisponible";
-        btn.disabled = true;
-    } else {
-        item.classList.remove("disabled-item");
-        btn.textContent = "Je prends";
-        btn.disabled = false;
-    }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    const items = document.querySelectorAll('.gift-item');
-
-    items.forEach(item => {
+    document.querySelectorAll(".gift-item").forEach(item => {
         const id = item.id;
+        const btn = item.querySelector("button");
 
-        db.ref("gifts/" + id).on("value", snapshot => {
-            const value = snapshot.val();
-            if (value) updateGiftState(id, value);
-        });
+        if (data[id] === true) {
+            item.classList.add("disabled-item");
+            btn.textContent = "Indisponible";
+            btn.disabled = true;
+        } else {
+            item.classList.remove("disabled-item");
+            btn.textContent = "Je prends";
+            btn.disabled = false;
+        }
     });
 });
+
+// 🔥 Réserver
+window.reserve = function(id){
+    set(ref(db, "reservations/" + id), true);
+};
