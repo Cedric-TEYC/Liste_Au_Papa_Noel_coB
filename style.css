@@ -7,15 +7,17 @@ body {
     overflow-x: hidden;
 }
 
+/* Bannière */
 .banner {
     background: rgba(0,0,0,0.55);
     padding: 60px 20px;
     text-align: center;
-    font-size: 36px;
+    font-size: 32px;
     font-weight: bold;
     text-shadow: 2px 2px 4px #000;
 }
 
+/* Navigation */
 nav {
     display: flex;
     justify-content: center;
@@ -32,8 +34,11 @@ nav a {
     transition: 0.3s;
     font-size: 18px;
 }
-nav a:hover { background: #30363d; }
+nav a:hover {
+    background: #30363d;
+}
 
+/* Pages */
 .page {
     display: none;
     padding: 30px;
@@ -42,36 +47,42 @@ nav a:hover { background: #30363d; }
 }
 .active { display: block; }
 
+/* Cartes cadeaux */
 .gift-item {
-    background: rgba(22, 27, 34, 0.85);
+    background: rgba(22, 27, 34, 0.88);
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 15px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 0 12px #0008;
-    backdrop-filter: blur(6px);
-}
-
-.gift-info {
-    display: flex;
     align-items: center;
     gap: 15px;
 }
-.gift-text { display: flex; flex-direction: column; }
-.gift-name { font-size: 18px; font-weight: bold; }
-.gift-price { color: #ffd700; font-size: 16px; }
 
 .gift-img {
-    width: 90px;
-    height: 90px;
+    width: 140px;
+    height: 140px;
+    border-radius: 10px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-right: 15px;
 }
 
+.gift-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.gift-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.gift-price {
+    font-size: 16px;
+    color: #ffd700;
+}
+
+/* Boutons */
 button {
+    margin-left: auto;
     padding: 10px 18px;
     border: none;
     border-radius: 6px;
@@ -79,70 +90,45 @@ button {
     background: #238636;
     color: #fff;
     font-weight: bold;
-    font-size: 16px;
 }
 button:hover { background: #2ea043; }
 
 .disabled-item { opacity: 0.4; }
 .disabled-item button {
     background: #555 !important;
-    cursor: not-allowed;
 }
-
-.dino-theme h2 { color: #40ff8c; }
-.cyber-theme h2 { color: #58a6ff; }
 
 /* Neige */
-.snow {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    pointer-events: none;
-}
+.snow { position: fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; }
 .flake {
     position: absolute;
     top: -10px;
     animation: fall linear infinite;
-    color: white;
+    color: #fff;
 }
 @keyframes fall {
     0% { transform: translateY(-10px); }
     100% { transform: translateY(110vh); }
 }
 
-/* Responsive mobile */
+/* 📱 MOBILE */
 @media (max-width: 600px) {
-    .banner {
-        font-size: 26px;
-        padding: 40px 10px;
-    }
-    nav {
-        flex-direction: column;
-        gap: 8px;
-    }
-    nav a {
-        width: 90%;
-        text-align: center;
-        font-size: 16px;
-    }
-    .page {
-        max-width: 95%;
-        padding: 20px;
-    }
+    nav { flex-direction: column; gap: 8px; }
+    nav a { width: 90%; text-align: center; }
+
     .gift-item {
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        text-align: center;
     }
+
     .gift-img {
         width: 70%;
         height: auto;
-        max-height: 240px;
-        margin-right: 0;
     }
+
     button {
         width: 100%;
-        padding: 12px;
-        font-size: 17px;
+        margin: 0;
+        padding: 14px;
     }
 }
