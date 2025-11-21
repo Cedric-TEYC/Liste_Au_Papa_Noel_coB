@@ -1,24 +1,51 @@
-/* ==== FOND GENERAL ==== */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: url('Nous_deux.jpeg') center top / contain no-repeat fixed;
-    background-color: #000; /* évite les bandes blanches */
-    color: #fff;
-    overflow-x: hidden;
+/* ===== FOND DE LA PAGE ===== */
+.background {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Nous_deux.jpeg');
+    background-size: cover;       /* PC + Mobile OK */
+    background-position: center;  /* centré */
+    background-repeat: no-repeat;
+    z-index: -2;
+    filter: brightness(0.45);     /* superbe rendu */
 }
 
-/* ==== BANNIERE ==== */
+/* ===== NEIGE ===== */
+.snow {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.flake {
+    position: absolute;
+    top: -10px;
+    animation: fall linear infinite;
+    opacity: 0.9;
+    color: white;
+    font-size: 18px;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10px); }
+    100% { transform: translateY(110vh); }
+}
+
+/* ===== TITRE ===== */
 .banner {
-    background: rgba(0,0,0,0.55);
-    padding: 60px 20px;
+    background: rgba(0,0,0,0.65);
+    padding: 50px 20px;
     text-align: center;
     font-size: 32px;
     font-weight: bold;
-    text-shadow: 2px 2px 4px #000;
+    text-shadow: 2px 2px 4px black;
 }
 
-/* ==== NAVIGATION ==== */
+/* ===== NAVIGATION ===== */
 nav {
     display: flex;
     justify-content: center;
@@ -26,166 +53,102 @@ nav {
     background: #161b22;
     padding: 15px 0;
 }
+
 nav a {
-    color: #fff;
-    text-decoration: none;
+    color: white;
+    background: #21262d;
     padding: 10px 20px;
     border-radius: 8px;
-    background: #21262d;
-    transition: 0.3s;
+    text-decoration: none;
     font-size: 18px;
+    transition: 0.3s;
 }
+
 nav a:hover {
     background: #30363d;
 }
 
-/* ==== PAGES ==== */
+/* ===== PAGES ===== */
 .page {
     display: none;
-    padding: 30px;
     max-width: 900px;
     margin: auto;
+    padding: 30px;
 }
+
 .active { display: block; }
 
-/* ==== ACCUEIL CENTRE ==== */
-#home {
+/* ===== ACCUEIL ===== */
+.home-card {
+    background: rgba(0,0,0,0.60);
+    padding: 30px;
+    border-radius: 10px;
     text-align: center;
-    margin-top: 40px;
 }
 
-#home h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-#home p {
-    font-size: 20px;
-    line-height: 1.6;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* ==== CARTES CADEAUX ==== */
+/* ===== CADEAUX ===== */
 .gift-item {
-    background: rgba(22, 27, 34, 0.88);
+    background: rgba(22,27,34,0.9);
     padding: 15px;
     border-radius: 10px;
-    margin-bottom: 15px;
     display: flex;
-    align-items: center;
     gap: 15px;
+    margin-bottom: 20px;
+    align-items: center;
 }
 
 .gift-img {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     border-radius: 10px;
     object-fit: cover;
 }
 
-.gift-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.gift-name {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.gift-price {
-    font-size: 16px;
-    color: #ffd700;
-}
-
-/* ==== BOUTONS ==== */
 button {
     margin-left: auto;
     padding: 10px 18px;
+    background: #238636;
     border: none;
     border-radius: 6px;
-    cursor: pointer;
-    background: #238636;
-    color: #fff;
+    color: white;
     font-weight: bold;
 }
-button:hover { background: #2ea043; }
 
-.disabled-item { opacity: 0.4; }
-.disabled-item button {
-    background: #555 !important;
+button:hover {
+    background: #2ea043;
 }
 
-/* ==== NEIGE ==== */
-.snow { 
-    position: fixed; 
-    top:0; 
-    left:0; 
-    width:100%; 
-    height:100%; 
-    pointer-events:none; 
-}
-.flake {
-    position: absolute;
-    top: -10px;
-    animation: fall linear infinite;
-    color: #fff;
-    opacity: 0.85;
-    font-size: 18px;
-}
-@keyframes fall {
-    0% { transform: translateY(-10px); }
-    100% { transform: translateY(110vh); }
-}
-
-/* ==== MOBILE ==== */
+/* ===== MOBILE ===== */
 @media (max-width: 600px) {
 
-    /* Dézoomer la photo sur mobile */
-    body {
-        background: url('Nous_deux.jpeg') center top / cover no-repeat fixed;
-    }
-
     .banner {
-        font-size: 26px;
-        padding: 40px 10px;
+        font-size: 25px;
+        padding: 30px 10px;
     }
 
     nav {
         flex-direction: column;
-        gap: 8px;
-    }
-    nav a {
-        width: 90%;
-        text-align: center;
-        font-size: 16px;
-    }
-
-    .page {
-        max-width: 95%;
-        padding: 20px;
-    }
-
-    /* CARTES CADEAUX MOBILE */
-    .gift-item {
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center;
         gap: 10px;
     }
 
+    nav a {
+        width: 90%;
+        margin: auto;
+    }
+
+    .gift-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
     .gift-img {
-        width: 70% !important;
-        height: auto !important;
-        max-height: 200px !important;
-        margin-bottom: 10px;
+        width: 70%;
+        height: auto;
         object-fit: contain;
     }
 
     button {
         width: 100%;
-        padding: 14px;
-        font-size: 17px;
+        margin-left: 0;
     }
 }
