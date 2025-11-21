@@ -1,40 +1,14 @@
-/* ============================================
-   🎄 STYLE GLOBAL — Liste au Père Noël
-   Optimisé Desktop / iPhone / Android
-   ============================================ */
-
-/* ==== FOND PRINCIPAL ==== */
+/* ==== FOND GENERAL ==== */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-
-    /* Image non zoomée */
-    background: url('Nous_deux.jpeg') no-repeat center top;
-    background-size: contain;
-    background-color: #000;
-
-    position: relative;
+    background: url('Nous_deux.jpeg') center top no-repeat fixed;
+    background-size: cover;
     color: #fff;
     overflow-x: hidden;
 }
 
-/* ---- Flou + assombrissement pour remplir l’écran ---- */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-
-    background: url('Nous_deux.jpeg') no-repeat center center;
-    background-size: cover;
-    filter: blur(18px) brightness(0.35);
-
-    z-index: -1;
-}
-
-/* ============================================
-   🔵 BANNIÈRE
-   ============================================ */
+/* ==== BANNIERE ==== */
 .banner {
     background: rgba(0,0,0,0.55);
     padding: 60px 20px;
@@ -44,9 +18,7 @@ body::before {
     text-shadow: 2px 2px 4px #000;
 }
 
-/* ============================================
-   🔵 NAVIGATION
-   ============================================ */
+/* ==== NAVIGATION ==== */
 nav {
     display: flex;
     justify-content: center;
@@ -63,11 +35,11 @@ nav a {
     transition: 0.3s;
     font-size: 18px;
 }
-nav a:hover { background: #30363d; }
+nav a:hover {
+    background: #30363d;
+}
 
-/* ============================================
-   🔵 PAGES
-   ============================================ */
+/* ==== PAGES ==== */
 .page {
     display: none;
     padding: 30px;
@@ -76,57 +48,47 @@ nav a:hover { background: #30363d; }
 }
 .active { display: block; }
 
-/* ============================================
-   🏠 PAGE ACCUEIL — centrée & lisible
-   ============================================ */
+/* ==== PAGE ACCUEIL ==== */
 #home {
     text-align: center;
-    background: rgba(0,0,0,0.45);
-    padding: 40px;
-    border-radius: 15px;
-    margin-top: 20px;
 }
-
 #home h2 {
-    font-size: 34px;
-    margin-bottom: 10px;
+    font-size: 32px;
+    margin-bottom: 20px;
 }
-
 #home p {
     font-size: 20px;
     line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* ============================================
-   🎁 CARTES CADEAUX
-   ============================================ */
+/* ==== CARTES CADEAUX ==== */
 .gift-item {
     background: rgba(22, 27, 34, 0.88);
-    padding: 15px;
+    padding: 18px;
     border-radius: 12px;
     margin-bottom: 18px;
     display: flex;
     align-items: center;
     gap: 18px;
-    box-shadow: 0 0 12px #0006;
+    backdrop-filter: blur(4px);
 }
 
-/* Image des cadeaux */
 .gift-img {
-    width: 140px;
-    height: 140px;
-    border-radius: 12px;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
     object-fit: cover;
 }
 
-/* Bloc texte */
 .gift-text {
     display: flex;
     flex-direction: column;
 }
 
 .gift-name {
-    font-size: 19px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -135,7 +97,7 @@ nav a:hover { background: #30363d; }
     color: #ffd700;
 }
 
-/* Bouton */
+/* ==== BOUTONS ==== */
 button {
     margin-left: auto;
     padding: 10px 18px;
@@ -145,25 +107,31 @@ button {
     background: #238636;
     color: #fff;
     font-weight: bold;
-    font-size: 16px;
 }
 button:hover { background: #2ea043; }
 
-.disabled-item { opacity: 0.45; }
+.disabled-item { opacity: 0.4; }
 .disabled-item button {
     background: #555 !important;
 }
 
-/* ============================================
-   ❄️ NEIGE ANIMÉE
-   ============================================ */
-.snow { position: fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; }
+/* ==== NEIGE ==== */
+.snow { 
+    position: fixed; 
+    top:0; 
+    left:0; 
+    width:100%; 
+    height:100%; 
+    pointer-events:none; 
+    overflow:hidden;
+    z-index: 9999;
+}
 .flake {
     position: absolute;
     top: -10px;
-    color: #fff;
-    opacity: 0.9;
     animation: fall linear infinite;
+    color: white;
+    opacity: 0.9;
     text-shadow: 0 0 8px rgba(255,255,255,0.8);
 }
 @keyframes fall {
@@ -171,21 +139,25 @@ button:hover { background: #2ea043; }
     100% { transform: translateY(110vh); }
 }
 
-/* ============================================
-   📱 VERSION MOBILE — iPhone + Android
-   ============================================ */
+/* ==== MOBILE ==== */
 @media (max-width: 600px) {
 
-    /* Bannière */
-    .banner {
-        font-size: 26px;
-        padding: 40px 15px;
+    /* Fond mobile : éviter le zoom */
+    body {
+        background: url('Nous_deux.jpeg') center top no-repeat;
+        background-size: contain;
+        background-attachment: scroll;
+        background-color: black;
     }
 
-    /* Navigation */
+    .banner {
+        font-size: 26px;
+        padding: 40px 10px;
+    }
+
     nav {
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
     }
     nav a {
         width: 90%;
@@ -193,37 +165,29 @@ button:hover { background: #2ea043; }
         font-size: 16px;
     }
 
-    /* Accueil */
-    #home {
-        padding: 25px;
-        margin-top: 10px;
-    }
-    #home h2 {
-        font-size: 28px;
-    }
-    #home p {
-        font-size: 18px;
+    .page {
+        max-width: 95%;
+        padding: 20px;
     }
 
-    /* Cartes cadeaux */
     .gift-item {
-        flex-direction: column;
+        flex-direction: column !important;
+        align-items: center !important;
         text-align: center;
-        gap: 12px;
+        gap: 10px;
     }
 
     .gift-img {
-        width: 75% !important;
-        max-width: 260px;
+        width: 70% !important;
         height: auto !important;
+        max-height: 200px !important;
     }
 
-    .gift-name {
-        font-size: 17px;
-    }
-
+    .gift-text,
+    .gift-name,
     .gift-price {
-        font-size: 16px;
+        width: 100%;
+        text-align: center;
     }
 
     button {
