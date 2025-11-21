@@ -113,22 +113,33 @@ button:hover { background: #2ea043; }
 
 /* 📱 MOBILE */
 @media (max-width: 600px) {
-    nav { flex-direction: column; gap: 8px; }
-    nav a { width: 90%; text-align: center; }
 
     .gift-item {
-        flex-direction: column;
+        flex-direction: column !important;
+        align-items: center !important;
         text-align: center;
+        gap: 10px;
     }
 
     .gift-img {
-        width: 70%;
-        height: auto;
+        width: 65% !important;
+        height: auto !important;
+        max-height: 180px !important;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    .gift-text, .gift-name, .gift-price, .gift-item span {
+        text-align: center;
+        display: block;
+        width: 100%;
+        font-size: 16px;
     }
 
     button {
         width: 100%;
-        margin: 0;
-        padding: 14px;
+        padding: 12px;
+        font-size: 17px;
     }
 }
+
