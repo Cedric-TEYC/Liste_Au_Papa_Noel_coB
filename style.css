@@ -7,22 +7,20 @@
     height: 100%;
 
     background-image: url('Nous_deux.jpeg');
-    background-size: contain;     /* >>> EXACTEMENT COMME TA PREMIÈRE VERSION */
+    background-size: contain;      /* >>> identique QAU rendu d’origine */
     background-position: top center;
     background-repeat: no-repeat;
+    background-color: #000;        /* bandes noires OK */
+    filter: brightness(0.45);
 
-    background-color: #000;        /* bandes noires OK si nécessaire */
     z-index: -2;
-    filter: brightness(0.45);      /* lumière parfaite */
 }
 
 /* ===== NEIGE ===== */
 .snow {
     position: fixed;
-    top: 0; 
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     pointer-events: none;
     z-index: -1;
 }
@@ -32,19 +30,18 @@
     top: -10px;
     animation: fall linear infinite;
     opacity: 0.9;
-    color: #fff;
-    font-size: 20px;
+    color: white;
+    font-size: 18px;
 }
-
 @keyframes fall {
-    from { transform: translateY(-10px); }
-    to   { transform: translateY(110vh); }
+    0% { transform: translateY(-10px); }
+    100% { transform: translateY(110vh); }
 }
 
 /* ===== BANNIÈRE ===== */
 .banner {
     background: rgba(0,0,0,0.55);
-    padding: 55px 20px;
+    padding: 60px 20px;
     text-align: center;
     font-size: 34px;
     font-weight: bold;
@@ -61,17 +58,19 @@ nav {
 }
 
 nav a {
-    color: #fff;
+    color: white;
     background: #21262d;
     padding: 10px 20px;
     border-radius: 8px;
     text-decoration: none;
-    font-size: 18px;
     transition: 0.3s;
+    font-size: 18px;
 }
-nav a:hover { background: #30363d; }
+nav a:hover {
+    background: #30363d;
+}
 
-/* ===== PAGES ===== */
+/* ===== PAGES & ACCUEIL ===== */
 .page {
     display: none;
     max-width: 900px;
@@ -80,28 +79,31 @@ nav a:hover { background: #30363d; }
 }
 .active { display: block; }
 
-/* ===== CARTE ACCUEIL ===== */
 .home-card {
-    background: rgba(0,0,0,0.60);
+    background: rgba(0,0,0,0.65);
     padding: 35px;
     border-radius: 12px;
     text-align: center;
+    box-shadow: 0 0 20px #0006;
 }
 
 /* ===== CADEAUX ===== */
 .gift-item {
     background: rgba(22,27,34,0.9);
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 12px;
     display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 18px;
+    margin-bottom: 22px;
     align-items: center;
+
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 12px #0008;
 }
 
 .gift-img {
-    width: 130px;
-    height: 130px;
+    width: 110px;
+    height: 110px;
     border-radius: 10px;
     object-fit: cover;
 }
@@ -129,6 +131,7 @@ button {
     border-radius: 6px;
     color: white;
     font-weight: bold;
+    font-size: 16px;
     cursor: pointer;
 }
 button:hover { background: #2ea043; }
@@ -142,18 +145,17 @@ button:hover { background: #2ea043; }
 @media (max-width: 600px) {
 
     .banner {
-        font-size: 25px;
-        padding: 35px 10px;
+        font-size: 26px;
+        padding: 40px 10px;
     }
 
     nav {
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
     }
 
     nav a {
         width: 90%;
-        margin: 0 auto;
         text-align: center;
         font-size: 17px;
     }
@@ -166,6 +168,7 @@ button:hover { background: #2ea043; }
     .gift-item {
         flex-direction: column;
         text-align: center;
+        padding: 20px;
     }
 
     .gift-img {
