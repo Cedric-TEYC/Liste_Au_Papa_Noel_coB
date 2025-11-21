@@ -3,18 +3,16 @@
 *********************************************/
 .background {
     position: fixed;
-    top: 0; 
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-
     background-image: url('Nous_deux.jpeg');
-    background-size: contain;        /* pleine largeur, pas zoomée */
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: top center;
-    background-color: #000;          /* bandes noires OK */
+    background-color: #000;
     filter: brightness(0.45);
-
     z-index: -2;
 }
 
@@ -23,10 +21,7 @@
 *********************************************/
 .snow {
     position: fixed;
-    top: 0; 
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     pointer-events: none;
     z-index: -1;
 }
@@ -36,13 +31,13 @@
     top: -10px;
     color: #fff;
     opacity: 0.9;
-    animation: fall linear infinite;
     font-size: 20px;
+    animation: fall linear infinite;
 }
 
 @keyframes fall {
-    0% { transform: translateY(-10px); }
-    100% { transform: translateY(110vh); }
+    from { transform: translateY(-10px); }
+    to   { transform: translateY(110vh); }
 }
 
 /********************************************
@@ -63,8 +58,7 @@
 *********************************************/
 nav {
     display: flex;
-    justify-content: center;    /* CENTRÉ */
-    align-items: center;
+    justify-content: center;
     gap: 25px;
     background: #161b22;
     padding: 12px 0;
@@ -75,11 +69,11 @@ nav button {
     background: #21262d;
     padding: 10px 25px;
     border-radius: 8px;
-    color: white;
-    text-decoration: none;
+    color: #fff;
     font-size: 18px;
     border: none;
     cursor: pointer;
+    text-decoration: none;
     transition: 0.3s;
 }
 
@@ -97,7 +91,6 @@ nav button:hover {
     margin: 40px auto;
     padding: 20px;
     text-align: center;
-    color: #fff;
 }
 
 .page.active { display: block; }
@@ -108,30 +101,30 @@ nav button:hover {
 }
 
 /********************************************
-  🎁 CADEAUX
+  🎁 LISTE CADEAUX
 *********************************************/
 .gift-item {
     background: rgba(22,27,34,0.9);
     padding: 15px;
     border-radius: 10px;
+    box-shadow: 0 0 12px #0008;
     display: flex;
     gap: 15px;
     align-items: center;
-    margin-bottom: 20px;
-    box-shadow: 0 0 12px #0008;
+    margin-bottom: 22px;
 }
 
 .gift-img {
     width: 130px;
     height: 130px;
-    object-fit: cover;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .gift-text {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 6px;
 }
 
 .gift-name {
@@ -144,37 +137,26 @@ nav button:hover {
     color: #ffd700;
 }
 
-/* Conteneur bouton + prix */
+/********************************************
+  🔗 BOUTONS AMAZON + SMYTHS
+*********************************************/
+.gift-links {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
 .gift-link-box {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Prix sous les boutons Amazon/Smyths */
-.gift-price-btn {
-    margin-top: 4px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #ffd700;
-    text-shadow: 1px 1px 2px black;
-}
-
-/***************
-    🔗 BOUTONS LIENS
-***************/
-.gift-links {
-    margin-top: 8px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
 .gift-btn {
-    display: inline-block;
     padding: 8px 14px;
     border-radius: 6px;
-    color: white;
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
     font-size: 15px;
@@ -197,17 +179,24 @@ nav button:hover {
     background: #005ad1;
 }
 
+/* Prix sous bouton */
+.gift-price-btn {
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffd700;
+}
+
 /********************************************
   🎯 BOUTON "JE PRENDS"
 *********************************************/
-/* Bouton Je prends */
 .reserve-btn {
     margin-left: auto;
     padding: 12px 22px;
-    background: linear-gradient(135deg, #ff9800, #ff5722); /* orange → rouge doux */
+    background: linear-gradient(135deg, #ff9800, #ff5722);
     border: none;
     border-radius: 8px;
-    color: white;
+    color: #fff;
     font-weight: bold;
     font-size: 17px;
     display: flex;
@@ -228,15 +217,17 @@ nav button:hover {
     transform: scale(0.97);
 }
 
-/* Quand un produit est pris */
+/* Désactivé */
+.disabled-item {
+    opacity: 0.45;
+}
+
 .disabled-item .reserve-btn {
     background: #555 !important;
     cursor: not-allowed !important;
     transform: none !important;
     box-shadow: none !important;
-    opacity: 0.7;
 }
-
 
 /********************************************
   📱 MOBILE
@@ -252,7 +243,6 @@ nav button:hover {
     nav button {
         width: 90%;
         text-align: center;
-        margin: auto;
     }
 
     .gift-item {
@@ -265,7 +255,7 @@ nav button:hover {
         height: auto;
     }
 
-    button.reserve-btn {
+    .reserve-btn {
         width: 100%;
         margin-left: 0;
         padding: 14px;
