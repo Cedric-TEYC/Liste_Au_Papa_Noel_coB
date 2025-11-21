@@ -1,30 +1,20 @@
-/* ============================
-   ❄ GÉNÉRATION DE LA NEIGE ❄
-============================ */
-
+/***************  ❄ NEIGE  ***************/
 const snowContainer = document.querySelector('.snow');
 
-if (snowContainer) {
-    setInterval(() => {
-        const flake = document.createElement('div');
-        flake.className = 'flake';
-        flake.textContent = '❄';
+setInterval(() => {
+    const flake = document.createElement('div');
+    flake.className = 'flake';
+    flake.textContent = '❄';
 
-        flake.style.left = Math.random() * 100 + 'vw';
-        flake.style.fontSize = (10 + Math.random() * 20) + 'px';
-        flake.style.animationDuration = (5 + Math.random() * 6) + 's';
-        flake.style.opacity = (0.7 + Math.random() * 0.3);
+    flake.style.left = Math.random() * 100 + 'vw';
+    flake.style.fontSize = (10 + Math.random() * 20) + 'px';
+    flake.style.animationDuration = (5 + Math.random() * 6) + 's';
 
-        snowContainer.appendChild(flake);
+    snowContainer.appendChild(flake);
+    setTimeout(() => flake.remove(), 7000);
+}, 250);
 
-        setTimeout(() => flake.remove(), 7000);
-    }, 250);
-}
-
-/* ============================
-   🔥 FIREBASE LOGIC
-============================ */
-
+/*************** 🔥 FIREBASE ***************/
 import { db } from "./firebase.js";
 import { ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
@@ -33,7 +23,6 @@ window.showPage = function(id){
     document.getElementById(id).classList.add("active");
 };
 
-// 🔥 Mise à jour en temps réel
 onValue(ref(db, "reservations"), snapshot => {
     const data = snapshot.val() || {};
 
@@ -53,7 +42,6 @@ onValue(ref(db, "reservations"), snapshot => {
     });
 });
 
-// 🔥 Réserver un article
 window.reserve = function(id){
     set(ref(db, "reservations/" + id), true);
 };
