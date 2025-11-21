@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste au Père Noël – Owen & Cédric</title>
 
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=10">
 
     <link rel="icon" type="image/png"
           href="https://img.icons8.com/?size=100&id=ojNPx5wUA49-&format=png&color=000000">
@@ -23,10 +23,10 @@
 </header>
 
 <!-- 🔗 NAVIGATION -->
-<nav role="navigation">
-    <button onclick="showPage('home')" aria-label="Accueil">🏠 Accueil</button>
-    <button onclick="showPage('owen')" aria-label="Liste d'Owen">🦖 Liste d'Owen</button>
-    <button onclick="showPage('cedric')" aria-label="Liste de Cédric">🔐 Liste de Cédric</button>
+<nav>
+    <a onclick="showPage('home')">🏠 Accueil</a>
+    <a onclick="showPage('owen')">🦖 Liste d'Owen</a>
+    <a onclick="showPage('cedric')">🔐 Liste de Cédric</a>
 </nav>
 
 <main>
@@ -46,11 +46,11 @@
     </section>
 
     <!-- 🦖 PAGE OWEN -->
-    <section id="owen" class="page">
+    <section id="owen" class="page dino-theme">
         <h2>🦖 Liste d'Owen</h2>
 
         <div class="gift-item" id="lego">
-            <img src="Nous_deux.jpeg" class="gift-img" alt="Lego Jurassic Park – T-Rex">
+            <img src="Nous_deux.jpeg" class="gift-img">
             <div class="gift-text">
                 <span class="gift-name">Lego Jurassic Park – T-Rex</span>
             </div>
@@ -58,7 +58,7 @@
         </div>
 
         <div class="gift-item" id="spiderman">
-            <img src="Nous_deux.jpeg" class="gift-img" alt="Sweat Spiderman – 6 ans">
+            <img src="Nous_deux.jpeg" class="gift-img">
             <div class="gift-text">
                 <span class="gift-name">Sweat Spiderman – 6 ans</span>
             </div>
@@ -66,7 +66,7 @@
         </div>
 
         <div class="gift-item" id="dino">
-            <img src="Nous_deux.jpeg" class="gift-img" alt="Figurine Dino géante">
+            <img src="Nous_deux.jpeg" class="gift-img">
             <div class="gift-text">
                 <span class="gift-name">Figurine Dino géante</span>
             </div>
@@ -75,11 +75,11 @@
     </section>
 
     <!-- 🔐 PAGE CÉDRIC -->
-    <section id="cedric" class="page">
+    <section id="cedric" class="page cyber-theme">
         <h2>🔐 Liste de Cédric</h2>
 
         <div class="gift-item" id="hackypi">
-            <img src="Hackypi.jpg" class="gift-img" alt="Hacky Pi">
+            <img src="Hackypi.jpg" class="gift-img">
             <div class="gift-text">
                 <span class="gift-name">Hacky Pi – Kit sécurité programmable</span>
                 <span class="gift-price">39,34 € + 8,99 €</span>
@@ -88,7 +88,7 @@
         </div>
 
         <div class="gift-item" id="dualsense">
-            <img src="Nous_deux.jpeg" class="gift-img" alt="Manette PS5 – DualSense Edge">
+            <img src="Nous_deux.jpeg" class="gift-img">
             <div class="gift-text">
                 <span class="gift-name">Manette PS5 – DualSense Edge</span>
             </div>
@@ -96,18 +96,19 @@
         </div>
 
         <div class="gift-item" id="techwear">
-            <img src="Nous_deux.jpeg" class="gift-img" alt="Jogging Techwear noir">
+            <img src="Nous_deux.jpeg" class="gift-img">
             <div class="gift-text">
                 <span class="gift-name">Jogging Techwear noir</span>
             </div>
             <button onclick="reserve('techwear')">Je prends</button>
         </div>
     </section>
+
 </main>
 
 <!-- 🔥 SCRIPTS -->
-<script type="module" src="firebase.js?v=4"></script>
-<script type="module" src="script.js?v=4"></script>
+<script type="module" src="firebase.js?v=10"></script>
+<script type="module" src="script.js?v=10"></script>
 
 </body>
 </html>
