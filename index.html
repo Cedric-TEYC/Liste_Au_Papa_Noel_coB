@@ -6,17 +6,9 @@
     <title>Liste au Père Noël – Owen & Cédric</title>
 
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="https://img.icons8.com/?size=100&id=ojNPx5wUA49-&format=png&color=000000">
 
-    <!-- Firebase SDK (CDN compatible GitHub Pages) -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
-
-    <!-- Config Firebase -->
-    <script src="firebase.js"></script>
-
-    <!-- Script principal -->
-    <script defer src="script.js"></script>
+    <link rel="icon" type="image/png"
+          href="https://img.icons8.com/?size=100&id=ojNPx5wUA49-&format=png&color=000000">
 </head>
 
 <body>
@@ -31,86 +23,85 @@
     <a href="#" onclick="showPage('cedric')">🔐 Liste de Cédric</a>
 </nav>
 
-<!-- PAGE ACCUEIL -->
 <div id="home" class="page active">
     <h2>Bienvenue !</h2>
     <p>
         Voici notre liste de Noël 🎄<br><br>
-        ⭐ Choisissez un cadeau pour Owen ou Cédric.<br>
+        ⭐ Choisissez un cadeau.<br>
         ⭐ Cliquez sur « Je prends » pour bloquer l’article.<br>
-        ⭐ Les réservations sont synchronisées pour tout le monde.<br><br>
+        ⭐ La réservation est synchronisée pour tout le monde.<br><br>
         Merci Père Noël ! 🎅
     </p>
 </div>
 
-<!-- PAGE OWEN -->
+<!-- ****** LISTE OWEN ****** -->
 <div id="owen" class="page dino-theme">
     <h2>🦖 Liste d'Owen</h2>
 
     <div class="gift-item" id="lego">
         <img src="Nous_deux.jpeg" class="gift-img">
-        <span>Lego Jurassic Park – T-Rex</span>
+        <div class="gift-text">
+            <span class="gift-name">Lego Jurassic Park – T-Rex</span>
+            <span class="gift-price"></span>
+        </div>
         <button onclick="reserve('lego')">Je prends</button>
     </div>
 
     <div class="gift-item" id="spiderman">
         <img src="Nous_deux.jpeg" class="gift-img">
-        <span>Sweat Spiderman – 6 ans</span>
+        <div class="gift-text">
+            <span class="gift-name">Sweat Spiderman – 6 ans</span>
+            <span class="gift-price"></span>
+        </div>
         <button onclick="reserve('spiderman')">Je prends</button>
     </div>
 
     <div class="gift-item" id="dino">
         <img src="Nous_deux.jpeg" class="gift-img">
-        <span>Figurine Dino géante</span>
+        <div class="gift-text">
+            <span class="gift-name">Figurine Dino géante</span>
+            <span class="gift-price"></span>
+        </div>
         <button onclick="reserve('dino')">Je prends</button>
     </div>
 </div>
 
-<!-- PAGE CEDRIC -->
+<!-- ****** LISTE CEDRIC ****** -->
 <div id="cedric" class="page cyber-theme">
     <h2>🔐 Liste de Cédric</h2>
 
     <div class="gift-item" id="hackypi">
-        <div class="gift-info">
-            <img src="Hackypi.jpg" class="gift-img">
-            <div class="gift-text">
-                <span class="gift-name">Hacky Pi – Kit sécurité programmable</span>
-                <span class="gift-price">39,34 € + 8,99 € (livraison)</span>
-            </div>
+        <img src="Hackypi.jpg" class="gift-img">
+        <div class="gift-text">
+            <span class="gift-name">Hacky Pi – Kit sécurité programmable</span>
+            <span class="gift-price">39,34 € + 8,99 €</span>
         </div>
         <button onclick="reserve('hackypi')">Je prends</button>
     </div>
 
     <div class="gift-item" id="dualsense">
         <img src="Nous_deux.jpeg" class="gift-img">
-        <span>Manette PS5 – DualSense Edge</span>
+        <div class="gift-text">
+            <span class="gift-name">Manette PS5 – DualSense Edge</span>
+            <span class="gift-price"></span>
+        </div>
         <button onclick="reserve('dualsense')">Je prends</button>
     </div>
 
     <div class="gift-item" id="techwear">
         <img src="Nous_deux.jpeg" class="gift-img">
-        <span>Jogging Techwear noir</span>
+        <div class="gift-text">
+            <span class="gift-name">Jogging Techwear noir</span>
+            <span class="gift-price"></span>
+        </div>
         <button onclick="reserve('techwear')">Je prends</button>
     </div>
 </div>
 
 <div class="snow"></div>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const snow = document.querySelector(".snow");
-    for (let i = 0; i < 50; i++) {
-        const flake = document.createElement("div");
-        flake.classList.add("flake");
-        flake.textContent = "❄";
-        flake.style.left = Math.random() * 100 + "vw";
-        flake.style.fontSize = (Math.random() * 20 + 10) + "px";
-        flake.style.animationDuration = (Math.random() * 8 + 6) + "s";
-        flake.style.animationDelay = (Math.random() * 5) + "s";
-        snow.appendChild(flake);
-    }
-});
-</script>
+<script type="module" src="firebase.js"></script>
+<script type="module" src="script.js"></script>
 
 </body>
 </html>
