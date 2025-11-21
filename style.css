@@ -184,27 +184,43 @@ nav button:hover {
 /********************************************
   🎯 BOUTON "JE PRENDS"
 *********************************************/
-button.reserve-btn {
+/* Bouton Je prends */
+.reserve-btn {
     margin-left: auto;
-    padding: 10px 18px;
-    background: #238636;
+    padding: 12px 22px;
+    background: linear-gradient(135deg, #ff9800, #ff5722); /* orange → rouge doux */
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     color: white;
     font-weight: bold;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     cursor: pointer;
-    font-size: 16px;
+    box-shadow: 0 0 10px #0006;
+    transition: 0.25s;
 }
 
-button.reserve-btn:hover {
-    background: #2ea043;
+.reserve-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #ffa726, #ff7043);
+    box-shadow: 0 0 14px #0008;
 }
 
-.disabled-item { opacity: 0.35; }
-.disabled-item button {
+.reserve-btn:active {
+    transform: scale(0.97);
+}
+
+/* Quand un produit est pris */
+.disabled-item .reserve-btn {
     background: #555 !important;
-    cursor: not-allowed;
+    cursor: not-allowed !important;
+    transform: none !important;
+    box-shadow: none !important;
+    opacity: 0.7;
 }
+
 
 /********************************************
   📱 MOBILE
