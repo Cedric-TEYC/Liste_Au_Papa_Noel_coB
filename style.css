@@ -1,4 +1,3 @@
-/* ==== FOND ==== */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -8,7 +7,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ==== BANNIÈRE ==== */
 .banner {
     background: rgba(0,0,0,0.55);
     padding: 60px 20px;
@@ -18,7 +16,6 @@ body {
     text-shadow: 2px 2px 4px #000;
 }
 
-/* ==== NAV ==== */
 nav {
     display: flex;
     justify-content: center;
@@ -37,7 +34,6 @@ nav a {
 }
 nav a:hover { background: #30363d; }
 
-/* ==== PAGES ==== */
 .page {
     display: none;
     padding: 30px;
@@ -46,7 +42,6 @@ nav a:hover { background: #30363d; }
 }
 .active { display: block; }
 
-/* ==== CARTES ==== */
 .gift-item {
     background: rgba(22, 27, 34, 0.85);
     padding: 15px;
@@ -64,22 +59,9 @@ nav a:hover { background: #30363d; }
     align-items: center;
     gap: 15px;
 }
-
-.gift-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.gift-name {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.gift-price {
-    font-size: 16px;
-    color: #ffd700;
-    margin-top: 4px;
-}
+.gift-text { display: flex; flex-direction: column; }
+.gift-name { font-size: 18px; font-weight: bold; }
+.gift-price { color: #ffd700; font-size: 16px; }
 
 .gift-img {
     width: 90px;
@@ -107,69 +89,57 @@ button:hover { background: #2ea043; }
     cursor: not-allowed;
 }
 
-/* ==== THEMES ==== */
 .dino-theme h2 { color: #40ff8c; }
 .cyber-theme h2 { color: #58a6ff; }
 
-/* ==== FLOC0NS ==== */
+/* Neige */
 .snow {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
     pointer-events: none;
-    overflow: hidden;
 }
-
 .flake {
     position: absolute;
     top: -10px;
-    color: white;
-    opacity: 0.85;
     animation: fall linear infinite;
-    text-shadow: 0 0 8px rgba(255,255,255,0.8);
+    color: white;
 }
-
 @keyframes fall {
-    0% { transform: translateY(-10px) rotate(0deg); }
-    100% { transform: translateY(110vh) rotate(360deg); }
+    0% { transform: translateY(-10px); }
+    100% { transform: translateY(110vh); }
 }
 
-/* ==== MOBILE VERSION ==== */
+/* Responsive mobile */
 @media (max-width: 600px) {
-
     .banner {
         font-size: 26px;
         padding: 40px 10px;
     }
-
     nav {
         flex-direction: column;
         gap: 8px;
     }
-
     nav a {
         width: 90%;
         text-align: center;
         font-size: 16px;
     }
-
     .page {
         max-width: 95%;
         padding: 20px;
     }
-
     .gift-item {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 10px;
     }
-
     .gift-img {
-        width: 100%;
+        width: 70%;
         height: auto;
         max-height: 240px;
+        margin-right: 0;
     }
-
     button {
         width: 100%;
         padding: 12px;
