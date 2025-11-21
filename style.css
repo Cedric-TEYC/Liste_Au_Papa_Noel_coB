@@ -1,22 +1,29 @@
 /* ===== FOND DE LA PAGE ===== */
 .background {
     position: fixed;
-    top: 0; left: 0;
+    top: 0; 
+    left: 0;
     width: 100%;
     height: 100%;
+
+    /* 🔥 La photo ENTIEREMENT visible */
     background-image: url('Nous_deux.jpeg');
-    background-size: cover;       /* PC + Mobile OK */
-    background-position: center;  /* centré */
-    background-repeat: no-repeat;
+    background-size: contain;       /* montre toute la photo */
+    background-repeat: no-repeat;   
+    background-position: center;    
+    background-color: #000;         /* bandes noires propres autour */
+
     z-index: -2;
-    filter: brightness(0.45);     /* superbe rendu */
+    filter: brightness(0.42);       /* effet propre et homogène */
 }
 
 /* ===== NEIGE ===== */
 .snow {
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     pointer-events: none;
     z-index: -1;
 }
@@ -120,6 +127,12 @@ button:hover {
 
 /* ===== MOBILE ===== */
 @media (max-width: 600px) {
+
+    /* Photo toujours visible, sans zoom */
+    .background {
+        background-size: contain;
+        background-position: top center;
+    }
 
     .banner {
         font-size: 25px;
