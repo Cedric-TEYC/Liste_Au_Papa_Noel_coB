@@ -144,6 +144,22 @@ nav button:hover {
     color: #ffd700;
 }
 
+/* Conteneur bouton + prix */
+.gift-link-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Prix sous les boutons Amazon/Smyths */
+.gift-price-btn {
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 1px 1px 2px black;
+}
+
 /***************
     🔗 BOUTONS LIENS
 ***************/
