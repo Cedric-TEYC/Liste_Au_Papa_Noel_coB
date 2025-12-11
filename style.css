@@ -277,6 +277,6 @@ nav button:hover {
     justify-content: flex-end;   /* colle en bas */
     align-items: center;         /* centre horizontalement */
     min-height: calc(100vh - 140px); /* hauteur utile = écran - bannière/nav (à ajuster si besoin) */
-    padding-bottom: 200px;        /* petit espace avec le bas */
+    padding-bottom: 450px;        /* petit espace avec le bas */
 }
 
