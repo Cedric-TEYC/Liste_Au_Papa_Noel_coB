@@ -101,7 +101,7 @@ nav button:hover {
 }
 
 #home.page {
-    padding-top: 520px;   /* à ajuster : 480, 500, 540… selon où tu veux le texte */
+    padding-top: 400px;   /* à ajuster : 480, 500, 540… selon où tu veux le texte */
     padding-bottom: 40px;
 }
 
